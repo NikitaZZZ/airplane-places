@@ -1,3 +1,4 @@
+
 const symbols = [['A', 'B', 'C'], ['D', 'E', 'F']]
 
 window.onload = function () {
@@ -31,29 +32,34 @@ function generateRow(trys, divs = []) {
 generateRow(2, ["passangers-left-side", "passangers-right-side"]);
 
 const allPassangers = document.getElementsByClassName("passanger");
+const isMobile = navigator.userAgentData.mobile; //resolves true/false
 
-// const row = document.getElementById("row");
-// for (let i = 1; i < 29; i++) {
-//     const p = document.createElement("p");
-//     p.innerText = i;
-//     p.className = "row-number";
+isMobile ? showPlaceOnMobileDevices() : addListenersToPads();
 
-//     row.appendChild(p);
-// }
-
-for (let i = 0; i < allPassangers.length; i++) {
-    const passanger = document.getElementsByClassName("passanger")[i];
-    const row = i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27;
-
-    passanger.addEventListener("mouseover", function () {
-        this.innerHTML = `<p>${row}${passanger.id}</p>`;
-    });
+function showPlaceOnMobileDevices() {
+    for (let i = 0; i < allPassangers.length; i++) {
+        const passanger = document.getElementsByClassName("passanger")[i];
+        const row = i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27;
     
-    passanger.addEventListener("mouseout", function () { this.innerHTML = ``; })
+        this.innerHTML = `<p>${row}${passanger.id}</p>`;
+    }
+}
 
-    passanger.addEventListener("click", function () { 
-        setPlace(row, passanger.id);
-    });
+function addListenersToPads() {
+    for (let i = 0; i < allPassangers.length; i++) {
+        const passanger = document.getElementsByClassName("passanger")[i];
+        const row = i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27;
+    
+        passanger.addEventListener("mouseover", function () {
+            this.innerHTML = `<p>${row}${passanger.id}</p>`;
+        });
+        
+        passanger.addEventListener("mouseout", function () { this.innerHTML = ``; })
+    
+        passanger.addEventListener("click", function () { 
+            setPlace(row, passanger.id);
+        });
+    }
 }
 
 function setPlace(numberRowPlace, numberColumnPlace) { 
