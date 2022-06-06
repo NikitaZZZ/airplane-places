@@ -42,6 +42,10 @@ function showPlaceOnMobileDevices() {
         const row = i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27;
     
         passanger.innerHTML = `<p>${row}${passanger.id}</p>`;
+
+        passanger.addEventListener("click", function () { 
+            setPlace(row, passanger.id);
+        });s
     }
 }
 
