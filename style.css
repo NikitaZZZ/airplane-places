@@ -1,0 +1,46 @@
+* { font-family: 'Arial', sans-serif; }
+
+#row {
+    float: left;
+    margin-right: 1rem;
+    font-size: 2rem;
+}
+
+.passanger {
+    width: 50px;
+    height: 50px;
+    border-radius: 20px;
+    background: grey;
+    margin-bottom: 1rem;
+    display: inline-block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+#passangers-left-side { float: left; }
+#passangers-right-side { float: right; }
+
+.passanger > p {
+    position: absolute;
+    margin-left: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+#your-place {
+    font-weight: bold;
+    font-size: 10vw;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#row { margin-left: 2rem; }
+
+.all-sides { 
+    width: 500px;
+    display: flex;
+    margin: auto;
+    margin-top: 1rem;
+}
+
+#passangers-left-side { margin-left: 3rem; }
