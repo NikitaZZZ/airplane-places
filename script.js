@@ -43,15 +43,16 @@ const allPassangers = document.getElementsByClassName("passanger");
 
 for (let i = 0; i < allPassangers.length; i++) {
     const passanger = document.getElementsByClassName("passanger")[i];
+    const row = i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27;
 
     passanger.addEventListener("mouseover", function () {
-        this.innerHTML = `<p>${passanger.id}</p>`;
+        this.innerHTML = `<p>${row}${passanger.id}</p>`;
     });
     
     passanger.addEventListener("mouseout", function () { this.innerHTML = ``; })
 
     passanger.addEventListener("click", function () { 
-        setPlace(i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27, passanger.id);
+        setPlace(row, passanger.id);
     });
 }
 
