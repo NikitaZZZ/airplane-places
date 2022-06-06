@@ -41,7 +41,7 @@ function showPlaceOnMobileDevices() {
         const passanger = document.getElementsByClassName("passanger")[i];
         const row = i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27;
     
-        this.innerHTML = `<p>${row}${passanger.id}</p>`;
+        passanger.innerHTML = `<p>${row}${passanger.id}</p>`;
     }
 }
 
