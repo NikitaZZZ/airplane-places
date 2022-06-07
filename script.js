@@ -32,22 +32,21 @@ function generateRow(trys, divs = []) {
 generateRow(2, ["passangers-left-side", "passangers-right-side"]);
 
 const allPassangers = document.getElementsByClassName("passanger");
-const isMobile = navigator.userAgentData.mobile; //resolves true/false
+const isMobile = navigator.userAgentData.mobile;
+
 
 isMobile ? showPlaceOnMobileDevices() : addListenersToPads();
 
 function showPlaceOnMobileDevices() {
-    alert('mobile func');
-    
     for (let i = 0; i < allPassangers.length; i++) {
         const passanger = document.getElementsByClassName("passanger")[i];
-        const row = i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27;
+        const row = i < 84 ? Math.floor(i / 3) + 1 : Math.floor(i / 3) - 27;
     
         passanger.innerHTML = `<p>${row}${passanger.id}</p>`;
 
         passanger.addEventListener("click", function () { 
             setPlace(row, passanger.id);
-        });s
+        });
     }
 }
 
