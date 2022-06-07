@@ -37,6 +37,8 @@ const isMobile = navigator.userAgentData.mobile; //resolves true/false
 isMobile ? showPlaceOnMobileDevices() : addListenersToPads();
 
 function showPlaceOnMobileDevices() {
+    alert('mobile func');
+    
     for (let i = 0; i < allPassangers.length; i++) {
         const passanger = document.getElementsByClassName("passanger")[i];
         const row = i < 84 ? Math.floor(i / 3)+1 : Math.floor(i / 3) - 27;

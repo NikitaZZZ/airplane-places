@@ -38,8 +38,6 @@
 
 .all-sides { 
     width: 450px;
-    height: 500px;
-    overflow: auto;
     display: flex;
     margin: auto;
     margin-top: 1rem;
