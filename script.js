@@ -1,4 +1,3 @@
-
 const symbols = [['A', 'B', 'C'], ['D', 'E', 'F']]
 
 window.onload = function () {
@@ -31,11 +30,24 @@ function generateRow(trys, divs = []) {
 
 generateRow(2, ["passangers-left-side", "passangers-right-side"]);
 
+function isMobile() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+    
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+}
+
 const allPassangers = document.getElementsByClassName("passanger");
-const isMobile = navigator.userAgentData.mobile;
-
-
-isMobile ? showPlaceOnMobileDevices() : addListenersToPads();
+isMobile() ? showPlaceOnMobileDevices() : addListenersToPads();
 
 function showPlaceOnMobileDevices() {
     for (let i = 0; i < allPassangers.length; i++) {
